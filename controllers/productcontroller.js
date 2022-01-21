@@ -1,6 +1,6 @@
 const controller = {
-    products: (req,res) => {
-    res.send ("productos")}
+    index: (req,res) => {
+    res.render ("detalleproducto")}
    
 }
 
