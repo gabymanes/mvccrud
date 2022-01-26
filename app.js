@@ -8,5 +8,9 @@ app.listen (3000,() => {console.log ("servidor funcionando")})
 
 const indexRouter = require ("./routes/indexRouter")
 const productosRouter = require("./routes/productRouter")
+const formRouter = require("./routes/formRouter")
+
+
 app.use("/", indexRouter)
 app.use("/product", productosRouter)
+app.use("/formulario",formRouter)
