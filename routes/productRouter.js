@@ -7,6 +7,6 @@ const controller = require ("../controllers/productcontroller")
     res.send("productos")
 },*/
 router.get("/", controller.index)
-//router.get("/detalle/:id", controller.detalle....)) 
+router.get("/:id", controller.detalle)
 
 module.exports = router
