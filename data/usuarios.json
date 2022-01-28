@@ -1,0 +1,26 @@
+[
+    {
+        "id":1, 
+        "nombre": "Gabriel",
+        "apellido": "Manes",
+        "telefono": 1161892106,
+        "email":"gabymanes95@gmail.com"
+
+    }  ,
+    {
+        "id":2, 
+        "nombre": "Federico",
+        "apellido": "Manes",
+        "telefono": 1142153992,
+        "email":"fedemanes@gmail.com"
+
+    }   ,
+    {
+        "id":3, 
+        "nombre": "alejandro",
+        "apellido": "manes",
+        "telefono": 1159976600,
+        "email":"amanes@hotmail.com"
+
+    }
+]

@@ -1,5 +1,5 @@
 const controller = {
-    home : (req,res) =>{ 
+    form : (req,res) =>{ 
     res.render ("formulario")
     }
 }

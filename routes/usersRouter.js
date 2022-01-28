@@ -1,8 +1,8 @@
 const express = require ("express")
 const app = express ()
 const router = express.Router()
-const controller = require ("../controllers/formController")
+const controller = require ("../controllers/usersController")
 
-router.get ("/", controller.home)
+router.get ("/", controller.form)
 
 module.exports = router
