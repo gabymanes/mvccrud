@@ -4,12 +4,20 @@ const usersFilePath = path.join(__dirname, '../../data/usuarios.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'))
 
 const controller = {
+   index:(req,res) => {
+       res.send("bienvenido usuario")
+   },
+
     form : (req,res) =>{ 
     res.render ("formulario")
     },
-
+    }
+    
     /*
     ------------------
+
+
+
     HAY ALGO QUE NO ESTA FUNCIONANDO
     let generateID = .....
     
@@ -45,5 +53,5 @@ const controller = {
     editar: trabajas con el id con lo nuevo que te llega del formulario! 
     
     */ 
-}
+
 module.exports = controller

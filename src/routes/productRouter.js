@@ -1,5 +1,4 @@
 const express = require ("express")
-const app = express ()
 const router = express.Router()
 const controller = require ("../controllers/productcontroller")
 
@@ -7,6 +6,6 @@ const controller = require ("../controllers/productcontroller")
     res.send("productos")
 },*/
 router.get("/", controller.index)
-router.get("/:id", controller.detalle)
-
+router.get("/detalle",controller.detalle)
+//router.get("/:id", controller.mostrarId) Ruta parametrizada
 module.exports = router
