@@ -5,7 +5,12 @@ const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'))
 
 const controller = {
    index:(req,res) => {
-       res.send("bienvenido usuario")
+    let usuarios =users
+    usuarios.find((usuarioBuscado) =>{
+      return  usuarioBuscado.id == req.params.id
+    })
+    usuarioBuscado = usuarioBuscado[0]
+    res.render("usuarioIndex",{usuarioBuscado})
    },
 
     form : (req,res) =>{ 
