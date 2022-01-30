@@ -3,7 +3,7 @@ const router = express.Router()
 const controller = require ("../controllers/usersController")
 
 //bienvenidos usuarios. leer los usuarios y mostrarlos
-router.get("/",controller.index)
+router.get("/:id",controller.index)
 
 
 //el form es para crear un usuario
@@ -18,10 +18,10 @@ Formulario de edicion y borrar?
 router.get ("/edit/:id",controller.mostrarformulario)
 
 Editar
-router.put("/delete/:id",controller.editar)
-
+router.put("/edit/:id",controller.editarProcess)
+DUDA
 Eliminar
-router.delete("/idem",delete)
-
+router.delete("/edit/:id",controller.deleteProcess)
+DUDA
 */
 module.exports = router

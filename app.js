@@ -1,3 +1,7 @@
+//DUDA FORMULARIOS
+//DUDA QUE PONER EN EL ROUTE EN DELETE Y PUT
+//DUDA EN EL GENERATE ID PARA QUE ES
+
 const express = require ("express")
 const app = express()
 const path = require ("path")

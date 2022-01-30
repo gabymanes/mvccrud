@@ -7,10 +7,11 @@
 </head>
 <body>
     
-    <h1>Formulario edit y borrar
-        FALTAN CAMBIAR ALGUNOS CAMPOS (CREO) y agrega los dos botones
+    <h1>Formulario EDIT
+        FALTAN CAMBIAR EL ACTION (CREO)
     </h1>
-    <form action="/user" method="deleteyput">
+    <form method="POST "action="/users/??<%= product.id %>/saveproduct**editar?_method=PUT">
+        <div>>
         <label for="nombre">Nombre </label>
         <input type="text" name="nombre" id="nombre">
         <label for="apellido">Apellido</label>
@@ -19,9 +20,12 @@
         <input type="tel" name="telefono" id="telefono"> 
         <label for="email">Email</label>
         <input type="email" name="email" id="email">
-        <button type="submit">ENVIAR</button>
-        <button type="reset">Borrar</button>
+        
     </form>
-
+    <div>
+        <form method ="POST" action="/users/??<%= product.id %>/saveproduct**editar?_method=PUT">
+            <button type="submit">BORRAR</button>
+        </form>
+    </div>
 </body>
 </html>

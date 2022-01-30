@@ -17,7 +17,8 @@ const controller = {
     detalle: (req,res) => {
         let producto = productos
         let productoBuscado = producto.filter((producto) => {
-        return producto.id == req.params.id
+        //FILTER DEVUELVE UN ARRAY
+            return producto.id == req.params.id
         })
         productoBuscado = productoBuscado [0]
         res.render ("detalleproducto",{productoBuscado})
