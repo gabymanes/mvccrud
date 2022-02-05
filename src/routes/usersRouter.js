@@ -14,12 +14,13 @@ Crear usuario
 router.post ("/create",controller.crear)
 
 
-Formulario de edicion y borrar?
+Formulario de edicion y borrar
 router.get ("/edit/:id",controller.mostrarformulario)
 
 Editar
 router.put("/edit/:id",controller.editarProcess)
 DUDA
+
 Eliminar
 router.delete("/edit/:id",controller.deleteProcess)
 DUDA

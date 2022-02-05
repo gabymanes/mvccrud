@@ -10,7 +10,7 @@
     <h1>Formulario EDIT
         FALTAN CAMBIAR EL ACTION (CREO)
     </h1>
-    <form method="POST "action="/users/??<%= product.id %>/saveproduct**editar?_method=PUT">
+    <form method="POST "action="/users/edit/<%= product.id %>/saveproduct**editar?_method=PUT">
         <div>>
         <label for="nombre">Nombre </label>
         <input type="text" name="nombre" id="nombre">
@@ -23,7 +23,7 @@
         
     </form>
     <div>
-        <form method ="POST" action="/users/??<%= product.id %>/saveproduct**editar?_method=PUT">
+        <form method ="POST" action="/users/edit/<%= product.id %>/saveproduct**editar?_method=DELETE">HAY QUE MODIFICAR EL SAVEPRODUCT
             <button type="submit">BORRAR</button>
         </form>
     </div>
