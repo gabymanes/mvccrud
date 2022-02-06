@@ -10,20 +10,20 @@
     <h1>Formulario EDIT
         FALTAN CAMBIAR EL ACTION (CREO)
     </h1>
-    <form method="POST "action="/users/edit/<%= product.id %>/saveproduct**editar?_method=PUT">
+    <form method="POST "action="/users/edit/<%= usuarioBuscado.id %>?_method=PUT">
         <div>>
-        <label for="nombre">Nombre </label>
-        <input type="text" name="nombre" id="nombre">
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre" value="<%= usuarioBuscado.nombre%>">
         <label for="apellido">Apellido</label>
-        <input type="text" name="apellido" id="apellido">
+        <input type="text" name="apellido" id="apellido" value="<%= usuarioBuscado.apellido%>">
         <label for="telefono">Telefono</label>
-        <input type="tel" name="telefono" id="telefono"> 
+        <input type="tel" name="telefono" id="telefono" value="<%= usuarioBuscado.telefono%>"> 
         <label for="email">Email</label>
-        <input type="email" name="email" id="email">
-        
+        <input type="email" name="email" id="email" value="<%= usuarioBuscado.email%>">
+        <div><button type="submit">Editar</button></div>
     </form>
     <div>
-        <form method ="POST" action="/users/edit/<%= product.id %>/saveproduct**editar?_method=DELETE">HAY QUE MODIFICAR EL SAVEPRODUCT
+        <form method ="POST" action="/users/edit/<%= usuarioBuscado.id %>?_method=DELETE">
             <button type="submit">BORRAR</button>
         </form>
     </div>

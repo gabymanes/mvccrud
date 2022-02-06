@@ -6,7 +6,7 @@ let productos =[
 
 const controller = {
     index: (req,res) => {
-    res.send ("Aca me gustaria que se leyera la DB")
+    res.send ("Mostrar productos")
     },
     
     /*probar la vista parametrizada

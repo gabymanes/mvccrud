@@ -6,7 +6,7 @@
 const express = require ("express")
 const app = express()
 const path = require ("path")
-
+const methodOverride = require ("method-override")
 
 //EJS
 app.set ("views",path.join("./src/views"))
@@ -24,6 +24,7 @@ app.use("/product", productosRouter)
 app.use("/users",usersRouter)
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())
+app.use (methodOverride("_method"))
 //app.use(express.static(path.join(__dirname, 'public')))
 
 

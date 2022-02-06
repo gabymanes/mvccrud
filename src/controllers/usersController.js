@@ -4,7 +4,12 @@ const usersFilePath = path.join(__dirname, '../../data/usuarios.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'))
 
 const controller = {
-   index:(req,res) => {
+  
+  home:(req,res) => {
+    res.send("Elija un ID")
+  },
+
+  index:(req,res) => {
     let usuarios = users
     let usuarioBuscado = usuarios.find((usuario) =>{
       //FIND DEVUELVE EL PRIMERO!!
@@ -12,23 +17,44 @@ const controller = {
     })
     res.render("usuarioIndex",{usuarioBuscado})
    },
+  
 
-    form : (req,res) =>{ 
+  listar: (req,res) => {
+   
+    res.render ("usuariosList",{users})
+    //error en el for
+  },
+
+  //FORM PARA CREAR 
+  form : (req,res) =>{ 
     res.render ("formulario")
     },
-    }
+
+  //edit y eliminar  
+  mostrarformulario:(req,res) => {
+      let user = users
+      let id = req.params.id
+      let usuarioBuscado = user.find((usuario) => usuario.id == id);
+      res.render("formEditDelete",{usuarioBuscado})
+    },
+
+
+}
     
     /*
     ------------------
 
-    listar: (req,res) => {
-      res.render ("usuariosList",{users})
-    }
-
+   
     HAY ALGO QUE NO ESTA FUNCIONANDO
-    let generateID = .....
+   generateID: function () {
+        let json = products;
+        let lastUser = json.pop();
+        if (lastUser){
+          return id= lastUser.id + 1;
+        }
+        return id = 1;
     
-    crear: deberia de trabajar con el formulario 
+    crear: (req,res) => {deberia de trabajar con el formulario 
       let user = users
     {
          "id" : generar ID,
@@ -47,15 +73,11 @@ const controller = {
     
     users.push(usuarioNuevo);
     fs.writeFileSync(users, JSON.stringify(users,null,""))
+    res.redirect("users/listado")
     }
 
     --------------
-    mostrarformulario:(req,res) => {
-      let user = users
-      let id = req.params.id
-      let usuarioBuscado = user.find((usuario) => usuario.id == id);
-      res.render("/formEditDelete",{usuarioBuscado})
-    }
+    
 
 
     deleteProcess: (req,res) =>{
@@ -64,7 +86,7 @@ const controller = {
       let jsonAEscribir = user.filter(usuario => usuario.id !== usuarioBorrado)
       fs.writeFileSync(users, JSON.stringify(jsonAEscribir,null,""))  
     }
-     res.redirect("/")
+     res.redirect("/users/listado")
      deberia de ver adonde me manda este redirect
     --------------
 
@@ -81,7 +103,7 @@ const controller = {
          let email: req.body.email
         }
 
-      let usuarioNuevo = {   
+      let usuarioEditado = {   
          "nombre": nombre  
          "apellido" : apellido
          "telefono" : telefono
@@ -91,18 +113,19 @@ const controller = {
       let user = users; 
       let jsonAEscribir = user.map((usuario) => {
       if( usuario.id == id ){
-        return usuario = usuarioNuevo;
+        return usuario = usuarioEditado;
             } else {
               return usuario
             }
           })
     
       fs.writeFileSync(users, JSON.stringify(jsonAEscribir,null,""))
+      res.redirect("/users/usarioEditado",{usuarioEditado})
     }
-  }
+  
  
     
-  res.redirect("/users/usarioEditado?",{usuarioNuevo})
+  
   deberia de crear otra ruta y asi te muestra el usuario editado y tener en la vista un boton que te mande al index y listo.*/ 
 
 

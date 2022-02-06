@@ -9,7 +9,7 @@
     <h1>Producto Particular
     </h1>
     <div>
-        Bienvenido Usuario <%= usuarioBuscado.nombre %>
+        Bienvenido <%= usuarioBuscado.nombre %>
         <li>
             <ul><%= usuarioBuscado.apellido %></ul>
             <ul><%= usuarioBuscado.telefono %></ul>
@@ -18,7 +18,7 @@
         
     </div>
     <div>
-       <a href="/src/views/formEditDelete.ejs">
+       <a href="/users/edit/<%= usuarioBuscado.id %>">
             <button>Editar</button>
         </a>
     </div>

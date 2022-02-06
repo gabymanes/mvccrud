@@ -3,22 +3,20 @@ const router = express.Router()
 const controller = require ("../controllers/usersController")
 
 //bienvenidos usuarios. leer los usuarios y mostrar 1
-router.get("/:id",controller.index)
+router.get("/detalle/:id",controller.index)
+router.get("/", controller.home)
+router.get ("/listado", controller.listar)
 
 
 //el form es para crear un usuario
 router.get ("/create", controller.form)
 
+//Formulario de edicion y borrar
+router.get ("/edit/:id",controller.mostrarformulario)
 
-/*
-roter.get ("/usuariosList",controller.listar)
-
-Crear usuario
+/*Crear usuario
 router.post ("/create",controller.crear)
 
-
-Formulario de edicion y borrar
-router.get ("/edit/:id",controller.mostrarformulario)
 
 Editar
 router.put("/edit/:id",controller.editarProcess)

@@ -6,8 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-    <% for (let i=0; i < users.length; i++){ %>
-    <%= users.nombre[i]%>
-    <% } %>
+    <div>
+    <% users.forEach(function(usuario)  { %>
+    <%= users.nombre%>
+    <% }) %>
+</div>
 </body>
 </html>
