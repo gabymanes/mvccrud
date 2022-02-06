@@ -10,7 +10,17 @@
     </h1>
     <div>
         Bienvenido Usuario <%= usuarioBuscado.nombre %>
+        <li>
+            <ul><%= usuarioBuscado.apellido %></ul>
+            <ul><%= usuarioBuscado.telefono %></ul>
+            <ul><%= usuarioBuscado.email %></ul>
+        </li>
         
+    </div>
+    <div>
+       <a href="/src/views/formEditDelete.ejs">
+            <button>Editar</button>
+        </a>
     </div>
 </body>
 </html>

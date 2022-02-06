@@ -21,7 +21,9 @@ const controller = {
     /*
     ------------------
 
-
+    listar: (req,res) => {
+      res.render ("usuariosList",{users})
+    }
 
     HAY ALGO QUE NO ESTA FUNCIONANDO
     let generateID = .....
@@ -63,12 +65,14 @@ const controller = {
       fs.writeFileSync(users, JSON.stringify(jsonAEscribir,null,""))  
     }
      res.redirect("/")
+     deberia de ver adonde me manda este redirect
     --------------
 
     editarProcess: al poner el boton edit (href al formulario) en el detalle ya te traes un id 
     trabajas con el id con lo nuevo que te llega del formulario y lo pusheas
+    (req,res) => {  
       let user = users
-    {
+      {
          "id" : req.params.id,
          let productToEdit = products.find (product => product.id == id)??
          let nombre: req.body.nombre
@@ -77,15 +81,15 @@ const controller = {
          let email: req.body.email
         }
 
-     let usuarioNuevo = {   
+      let usuarioNuevo = {   
          "nombre": nombre  
          "apellido" : apellido
          "telefono" : telefono
          "email" : email
         }
     
-    let user = users; 
-    let jsonAEscribir = user.map((usuario) => {
+      let user = users; 
+      let jsonAEscribir = user.map((usuario) => {
       if( usuario.id == id ){
         return usuario = usuarioNuevo;
             } else {
@@ -93,10 +97,13 @@ const controller = {
             }
           })
     
-    fs.writeFileSync(users, JSON.stringify(jsonAEscribir,null,""))
+      fs.writeFileSync(users, JSON.stringify(jsonAEscribir,null,""))
     }
+  }
  
-    */ 
+    
+  res.redirect("/users/usarioEditado?",{usuarioNuevo})
+  deberia de crear otra ruta y asi te muestra el usuario editado y tener en la vista un boton que te mande al index y listo.*/ 
 
 
 module.exports = controller
