@@ -20,7 +20,7 @@ const controller = {
   
 
   listar: (req,res) => {
-   
+    let users = users
     res.render ("usuariosList",{users})
     //error en el for
   },
@@ -39,74 +39,67 @@ const controller = {
     },
 
 
-}
-    
-    /*
-    ------------------
-
-   
-    HAY ALGO QUE NO ESTA FUNCIONANDO
-   generateID: function () {
+  generateID: function () {
         let json = products;
         let lastUser = json.pop();
         if (lastUser){
           return id= lastUser.id + 1;
         }
         return id = 1;
+      },
     
-    crear: (req,res) => {deberia de trabajar con el formulario 
+    crear: (req,res) => { 
       let user = users
-    {
-         "id" : generar ID,
-         let nombre: req.body.nombre
-         let apellido: req.body.apellido
-         let telefono: req.body.telefono
-         let email: req.body.email
+      //aca iba un if con req files  
+      {
+          id = generateID(),
+         let nombre= req.body.nombre,
+         let apellido= req.body.apellido,
+         let telefono= req.body.telefono,
+         let email= req.body.email
         }
 
      let usuarioNuevo = {   
-         "nombre": nombre  
-         "apellido" : apellido
-         "telefono" : telefono
+         "nombre": nombre,
+         "apellido" : apellido,
+         "telefono" : telefono,
          "email" : email
         }
     
-    users.push(usuarioNuevo);
-    fs.writeFileSync(users, JSON.stringify(users,null,""))
+    user.push(usuarioNuevo);
+    fs.writeFileSync(path.join(__dirname,("../../data/usuarios.json", JSON.stringify(users,null,""))
     res.redirect("users/listado")
-    }
-
-    --------------
     
-
+  },
 
     deleteProcess: (req,res) =>{
-      let user = users
+      {let user = users
       let usuarioBorrado = req.params.id
       let jsonAEscribir = user.filter(usuario => usuario.id !== usuarioBorrado)
       fs.writeFileSync(users, JSON.stringify(jsonAEscribir,null,""))  
     }
      res.redirect("/users/listado")
-     deberia de ver adonde me manda este redirect
-    --------------
-
-    editarProcess: al poner el boton edit (href al formulario) en el detalle ya te traes un id 
-    trabajas con el id con lo nuevo que te llega del formulario y lo pusheas
+    
+  },
+   
+     editarProcess: 
+    //al poner el boton edit (href al formulario) en el detalle ya te traes un id 
+    //trabajas con el id con lo nuevo que te llega del formulario y lo pusheas
     (req,res) => {  
       let user = users
       {
-         "id" : req.params.id,
-         let productToEdit = products.find (product => product.id == id)??
-         let nombre: req.body.nombre
-         let apellido: req.body.apellido
-         let telefono: req.body.telefono
-         let email: req.body.email
+         id = req.params.id
+         //let productToEdit = products.find (product => product.id == id)??
+         let nombre= req.body.nombre
+         let apellido= req.body.apellido
+         let telefono= req.body.telefono
+         let email= req.body.email
         }
 
       let usuarioEditado = {   
-         "nombre": nombre  
-         "apellido" : apellido
-         "telefono" : telefono
+         "nombre": nombre, 
+         "apellido" : apellido,
+         "telefono" : telefono,
          "email" : email
         }
     
@@ -126,7 +119,7 @@ const controller = {
  
     
   
-  deberia de crear otra ruta y asi te muestra el usuario editado y tener en la vista un boton que te mande al index y listo.*/ 
-
+  //deberia de crear otra ruta y asi te muestra el usuario editado y tener en la vista un boton que te mande al index y listo.*/ 
+  }
 
 module.exports = controller

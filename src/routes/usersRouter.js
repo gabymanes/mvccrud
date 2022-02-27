@@ -20,10 +20,10 @@ router.post ("/create",controller.crear)
 
 Editar
 router.put("/edit/:id",controller.editarProcess)
-DUDA
+
 
 Eliminar
 router.delete("/edit/:id",controller.deleteProcess)
-DUDA
+
 */
 module.exports = router
